@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html class='no-js'>
+	<head>
+		<meta charset="utf-8">
+		<title>Feature Detection with Modernizr</title>
+
+		<!-- include modernizr here... -->
+		<script src="js/modernizr-latest.js" type="text/javascript"></script>
+		
+		<!-- include jQuery and other supporting libraries here... -->
+		<script src="js/jquery.1.11.3.min.js"></script>
+		
+		<!-- include tests here... -->
+		
+		
+		<script>
+			$(document).ready(function(){
+				console.log(Modernizr.prefixed('performance', window)); // will return the function
+				console.log(Modernizr.prefixed('getUserMedia', navigator)); // will return mozGetUserMedia() on firefox.
+				
+				var matchesSelectorFn = Modernizr.prefixed("matchesSelector", HTMLElement.prototype, document.body);
+				console.log(matchesSelectorFn("body")); // returns true
+				
+				matchesSelectorFn = Modernizr.prefixed("matchesSelector", HTMLElement.prototype, document.getElementById("result"));
+				console.log(matchesSelectorFn("#result")); // returns true
+				
+				console.log(Modernizr.prefixed('getUserMedia', navigator, false)); // will return mozGetUserMedia string on firefox. webkitGetUserMedia on Chrome
+			});
+		</script>
+	</head>
+
+	<body>
+		<div id="result"></div>
+	</body>
+</html>

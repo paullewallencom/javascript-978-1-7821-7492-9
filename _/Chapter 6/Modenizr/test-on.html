@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html class='no-js'>
+	<head>
+		<meta charset="utf-8">
+		<title>Feature Detection with Modernizr</title>
+		
+		<!-- include modernizr here... -->
+		<script src="js/modernizr-latest.js" type="text/javascript"></script>
+		
+		<!-- include jQuery and other supporting libraries here... -->
+		<script src="js/jquery.1.11.3.min.js"></script>
+		
+		<!-- include tests here... -->
+		<script>
+		
+		
+		$(document).ready(function(){
+			Modernizr.on('webgl', function( result ) {
+				if (result) {
+					// the browser has webgl
+					console.log("WebGL is present");
+				} else {
+					// the browser does not have webgl
+					console.log("WebGL is not present");
+				}
+			});
+		});
+		</script>
+		
+	</head>
+
+	<body>
+		<div id="result"></div>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html class='no-js'>
+	<head>
+		<meta charset="utf-8">
+		<title>Feature Detection with Modernizr</title>
+		
+		<!-- include modernizr here... -->
+		<script src="js/modernizr-latest.js" type="text/javascript"></script>
+		
+		<!-- include jQuery and other supporting libraries here... -->
+		<script src="js/jquery.1.11.3.min.js"></script>
+		
+		<!-- include tests here... -->
+		<script>
+		
+		
+		$(document).ready(function(){
+			console.log(Modernizr.prefixedCSS("binding"));
+
+			console.log(Modernizr.prefixedCSS("border-bottom-colors"));
+
+			console.log(Modernizr.prefixedCSS("borderBottomColors"));
+			console.log(Modernizr.prefixedCSS("column-width"));
+			console.log(Modernizr.prefixedCSS("columnWidth"));
+		});
+		</script>
+		
+	</head>
+
+	<body>
+		<div id="result"></div>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html class='no-js'>
+	<head>
+		<meta charset="utf-8">
+		<title>Feature Detection with Modernizr</title>
+		
+		<!-- include modernizr here... -->
+		<script src="js/modernizr-latest.js" type="text/javascript"></script>
+		
+		<!-- include jQuery and other supporting libraries here... -->
+		<script src="js/jquery.1.11.3.min.js"></script>
+		
+		<!-- include tests here... -->
+		<script>
+		
+		
+		$(document).ready(function(){
+			
+			
+			Modernizr.testStyles('#modernizr { width: 100px; color: blue; }', function(elem, rule){
+				Modernizr.addTest('width', elem.offsetWidth == 100);
+			}, 2);
+			Modernizr.testStyles('#modernizr { width: 100px; color: blue; }', function(elem, rule){
+				Modernizr.addTest('width', elem.offsetWidth == 100);
+			}, 2, ["video", "image"]);
+			console.log(Modernizr.testProp('pointerEvents'));
+			
+		});
+		</script>
+		
+	</head>
+
+	<body>
+	
+	</body>
+</html>

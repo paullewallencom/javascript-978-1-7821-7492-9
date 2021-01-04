@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite name="Firefox_390_Windows.AsynchronousTest" errors="0" failures="0" tests="1" time="5.053">
+<testcase classname="Firefox_390_Windows.AsynchronousTest" name="testSomethingComplicated" time="5.053"/>
+</testsuite>

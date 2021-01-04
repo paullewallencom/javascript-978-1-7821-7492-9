@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html class='no-js'>
+	<head>
+		<meta charset="utf-8">
+		<title>Feature Detection with Modernizr</title>
+		
+		<!-- include modernizr here... -->
+		<script src="js/modernizr-latest.js" type="text/javascript"></script>
+		
+		<!-- include jQuery and other supporting libraries here... -->
+		<script src="js/jquery.1.11.3.min.js"></script>
+		
+		<!-- include tests here... -->
+		<script>
+		
+		
+		$(document).ready(function(){
+			
+			console.log(Modernizr.testProp('pointerEvents'));
+			$("#result").html("Property  pointerEvents - "+ Modernizr.testProp('pointerEvents'));
+		});
+		</script>
+		
+	</head>
+
+	<body>
+		<div id="result"></div>
+	</body>
+</html>

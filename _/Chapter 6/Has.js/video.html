@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html class='no-js'>
+	<head>
+		<meta charset="utf-8">
+		<title>Feature Detection with Has.js</title>
+
+		<!-- include jQuery and other supporting libraries here... -->
+		<script src="js/jquery.1.11.3.min.js"></script>
+		
+		<!-- include tests here... -->
+		
+		<script>
+			var videoElement = "";
+			$(document).ready(function(){
+				if(has("video")){
+					//  video is supported by the browser and can play it.
+					$("#result").html("Video is supported");
+					videoElement = document.createElement('video');
+					$("body").append(videoElement);
+				}else{
+					// load via flash or something else
+					$("#result").html("Video is not supported, use Flash or something else.");
+				}
+			});
+		</script>
+		
+	</head>
+
+	<body>
+		<div id='result'></div>
+	</body>
+</html>

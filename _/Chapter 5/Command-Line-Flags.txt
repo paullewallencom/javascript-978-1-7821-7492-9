@@ -1,0 +1,22 @@
+--browser VAR             : The path to the browser executable
+--browserTimeout VAR      : The ms before a browser is declared dead.
+--captureAddress VAL      : The address to capture the browser.
+--captureConsole          : Capture the console (if possible) from the browser
+--config VAL              : Loads the configuration file
+--dryRunFor VAR           : Outputs the number of tests that are going to be run as well as their names for a set of expressions or all to see all the tests
+--help                    : Help
+--port N                  : The port on which to start the JsTestDriver server
+--preloadFiles            : Preload the js files
+--raiseOnFailure VAL      : Whether jstd will throw an exception when a test failure.
+--requiredBrowsers VAR    : Browsers that all actions must be run on.
+--reset                   : Resets the runner
+--server VAL              : The server to which to send the command
+--serverHandlerPrefix VAL : Whether the handlers will be prefixed with jstd
+--sslPort N               : The SSL port on which to start the JsTestDriver server
+--testOutput VAL          : A directory to which serialize the results of the tests as XML
+--tests VAR               : Run the tests specified in the form testCase.testName
+--verbose                 : Displays more information during a run
+--plugins VAL[,VAL]       : Comma separated list of paths to plugin jars.
+--config VAL              : Path to configuration file.
+--basePath VAL[,VAL]      : Override the base path(s) in the configuration file. Defaults to the parent directory of the configuration file.
+--runnerMode VAL          : The configuration of the logging and frequency that the runner reports actions: DEBUG, DEBUG_NO_TRACE, DEBUG_OBSERVE, PROFILE, QUIET (default), INFO

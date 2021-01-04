@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html class='no-js'>
+<head>
+	<meta charset="utf-8">
+	<title>Testing Modernizr</title>
+
+	<script src="js/modernizr-latest.js" type="text/javascript"></script>
+	<script src="js/jquery.1.11.3.min.js"></script>
+	
+	<!-- include spec files here... -->
+	<script src="test/load.js"></script>
+<script>
+	$(document).ready(function(){
+	for (var i in Modernizr) {
+            var x = eval('Modernizr.' + i)
+            if (typeof x == "boolean") {
+                $(".features").append('<b>' + i + ': </b>' + x + '<br />');
+            }
+        }
+		});
+	
+	
+	</script>
+</head>
+
+<body>
+	<div class='features'>
+		
+	</div>
+
+</body>
+</html>

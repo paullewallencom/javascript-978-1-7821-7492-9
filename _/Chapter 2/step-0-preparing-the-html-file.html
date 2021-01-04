@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Chapter - 1</title>
+	<!-- Basic Style -->
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/logger/assets/skins/sam/logger.css">
+	<!-- Source file -->
+	<script src="http://yui.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
+
+	<script>
+		// All our functions and tests go here.	
+		function convertCurrency(amount, rateOfConversion){
+			// some business logic
+		}
+		function doSomethingMore(){
+			// some more business logic
+		}
+		YUI().use('test-console', function (Y) {
+			// ... all the tests go here ...
+
+			// This will render a test console in the browser in the container(div here) with id testLogs. 
+			new Y.Test.Console().render('#testLogs');
+			// run the tests
+			Y.Test.Runner.run();
+			
+		});
+	</script>
+
+</head>
+
+<body class="yui3-skin-sam">
+	<div id="testLogs">
+	
+	</div>
+</body>
+
+</html>

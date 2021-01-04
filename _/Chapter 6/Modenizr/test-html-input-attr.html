@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html class='no-js'>
+	<head>
+		<meta charset="utf-8">
+		<title>Feature Detection with Modernizr</title>
+		
+		<!-- include modernizr here... -->
+		<script src="js/modernizr-latest.js" type="text/javascript"></script>
+		
+		<!-- include jQuery and other supporting libraries here... -->
+		<script src="js/jquery.1.11.3.min.js"></script>
+		
+		<!-- include tests here... -->
+		<script>
+		
+		
+		$(document).ready(function(){
+			
+			console.log("Modernizr.input.autocomplete = " + Modernizr.input.autocomplete);
+			console.log("Modernizr.input.autofocus = " + Modernizr.input.autofocus);
+			console.log("Modernizr.input.list = " + Modernizr.input.list);
+			console.log("Modernizr.input.max = " + Modernizr.input.max);
+			console.log("Modernizr.input.min = " + Modernizr.input.min);
+			console.log("Modernizr.input.multiple = " + Modernizr.input.multiple);
+			console.log("Modernizr.input.pattern = " + Modernizr.input.pattern);
+			console.log("Modernizr.input.placeholder = " + Modernizr.input.placeholder);
+			console.log("Modernizr.input.required = " + Modernizr.input.required);
+			console.log("Modernizr.input.step = " + Modernizr.input.step);
+			
+		});
+		</script>
+		
+	</head>
+
+	<body>
+		<div id="result"></div>
+	</body>
+</html>

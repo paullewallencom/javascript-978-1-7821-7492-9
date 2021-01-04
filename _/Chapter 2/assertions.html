@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html> <head>
+	<meta charset="UTF-8">
+	<title>Chapter - 1</title>
+	<!-- Basic Style -->
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/logger/assets/skins/sam/logger.css">
+	<!-- Source file -->
+	<script src="http://yui.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
+
+	<script>
+				
+		YUI().use('test-console', 'node-event-simulate', function (Y) {
+			var controller = {
+				handleClick: function(event){
+					new Y.Test.Console().render('#testLogs');
+					event.target.addClass("clicked");
+				}
+			}
+			var testCase = new Y.Test.Case({
+				name:'Show log console on click',
+				setUp: function(){
+					Y.one('.showLog').on('click', controller.handleClick);
+				},
+				tearDown: function(){
+					Y.one('.showLog').detachAll();
+				},
+				'handleClick() should show the log console on "clicked" and add the class "clicked" to the button':function(){
+					var button = Y.one('.showLog');
+					button.simulate('click');
+					Y.Assert.isTrue(button.hasClass('clicked'), 'Button should show the log console on "clicked" and have a class of "clicked"')
+					Y.Assert.areEqual(2, 2);  // Pass
+					Y.Assert.areEqual(3, "3", "3 was expected");     // Pass
+					Y.Assert.areNotEqual(2, 4);  // Pass
+					Y.Assert.areEqual(5, 7, "Five was expected."); // Fail
+
+					Y.Assert.areSame(2, 2);  // Pass
+					Y.Assert.areNotSame(3, "3", "3 was expected");     // Pass
+					Y.Assert.areNotEqual(2, 4);  // Pass
+					Y.Assert.areEqual(5, 7, "Five was expected."); // Fail
+
+					Y.Assert.isString("Test Driven Development Rocks!");     //Pass
+					Y.Assert.isNumber(23);    	//Pass
+					Y.Assert.isArray([]);       //Pass
+					Y.Assert.isObject([]);      //Pass
+					Y.Assert.isFunction(function(){});    //Pass
+					Y.Assert.isBoolean(true);    //Pass
+					Y.Assert.isObject(function(){});      //Pass
+
+					Y.Assert.isNumber("1", "Value should be a number.");  //Fail
+					Y.Assert.isString(1, "Value should be a string.");    //Fail
+					
+					Y.Assert.isTypeOf("string", "TDD Rocks");   //Pass
+					Y.Assert.isTypeOf("number", 23);               //Pass
+					Y.Assert.isTypeOf("boolean", false);           //Pass
+					Y.Assert.isTypeOf("number", 1.5);             //Pass
+					
+					Y.Assert.isFalse(false);      //Pass
+					Y.Assert.isTrue(true);        //Pass
+					Y.Assert.isNaN(NaN);          //Pass
+					Y.Assert.isNotNaN(23);         //Pass
+					Y.Assert.isNull(null);        //Pass
+					Y.Assert.isNotNull(undefined);    //Pass
+					Y.Assert.isUndefined(undefined);  //Pass
+					Y.Assert.isNotUndefined(null);    //Pass
+
+					Y.Assert.isUndefined({}, "Value should be undefined."); //Fail
+	
+	}
+			});
+			
+			var testCase2 = new Y.Test.Case({
+				name:'Testing other types of events',
+				'Other types of events':function(){
+					var testDiv = Y.one('.testDiv');
+					button.simulate('click');
+					Y.Assert.isTrue(button.hasClass('clicked'), 'Button should show the log console on "clicked" and have a class of "clicked"')
+				}
+			});
+			
+			Y.Test.Runner.add(testCase);
+			//run all tests
+			Y.Test.Runner.run();
+		});
+	</script>
+
+</head>
+
+<body class="yui3-skin-sam">
+	<div id="testLogs">
+	</div>
+	<div id="testDiv">
+	</div>
+	<input type="button" class="showLog" value="Show Test Log" name="show-log">
+
+</body></html>

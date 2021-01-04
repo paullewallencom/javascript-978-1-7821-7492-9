@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html class='no-js'>
+<head>
+	<meta charset="utf-8">
+	<title>Testing Modernizr</title>
+	
+</head>
+
+<body>
+	<div id='user-agent-string'>	
+	</div>
+	<div id='user-agent-string-function'>	
+	</div>
+
+</body>
+</html>
+<script>
+	
+	function detectMyBrowser(){
+		var currentBrowser = "";
+		if( navigator.userAgent.indexOf('Chrome') != -1 ){
+			currentBrowser = 'Chrome';
+		}
+		if( navigator.userAgent.indexOf('MSIE') != -1 ){
+			currentBrowser = 'Internet Explorer';
+		}
+		if( navigator.userAgent.indexOf('Firefox') != -1 ){
+			currentBrowser = 'Firefox';
+		}
+		if( navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1){
+			currentBrowser = 'Safari';
+		}
+		if( navigator.userAgent.indexOf('OPR') != -1 ){
+			currentBrowser = 'Opera';
+		}
+		console.log(currentBrowser);
+		document.getElementById('user-agent-string-function').innerHTML = currentBrowser;
+		return currentBrowser;
+	}
+	detectMyBrowser();
+	document.getElementById('user-agent-string').innerHTML = navigator.userAgent;
+	//  Firefox
+	// 	Mozilla/5.0 (Windows NT 6.1; WOW64; rv:39.0) Gecko/20100101 Firefox/39.0  
+	//  Chrome
+	//  Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36
+	//  Safari
+	//  Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/533.20.25 (KHTML, like Gecko) Version/5.0.4 Safari/533.20.27
+	//  IE 10
+	//  Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; Trident/7.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C; .NET4.0E)
+	//  IE 10
+	//  Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)
+	//  IE 8
+	//  Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0)
+	//  Opera
+	//  Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.58 Safari/537.36 OPR/20.0.1387.30 (Edition Next)
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Chapter 3 - DalekJS</title>
+  
+</head>
+<script>
+
+function convertCurrency(amount, rateOfConversion){
+	var toCurrencyAmount = 0;
+	// conversion		
+	toCurrencyAmount = (1/rateOfConversion )* amount;
+	// rounding off
+	//toCurrencyAmount = Math.round(toCurrencyAmount * 100) / 100;
+	console.log(toCurrencyAmount);
+	// toCurrencyAmount = Number.parseFloat(toCurrencyAmount).toFixed(2); // fails on IE
+	toCurrencyAmount = parseFloat(toCurrencyAmount).toFixed(2);
+	document.getElementById('toCurrencyAmount').value = '$'+toCurrencyAmount;
+}
+</script>
+<body>
+
+ <input id="amount" name="amount" type="text" value="" />
+
+ <input id="rateOfConversion" name="rateOfConversion" type="text" value="" />
+
+ <input id="convert" name="convert" type="submit" value="Convert" onClick="convertCurrency(document.getElementById('amount').value,document.getElementById('rateOfConversion').value)" />
+
+ <input id="toCurrencyAmount" name="toCurrencyAmount" type="text" value="" />
+
+</body>
+
+</html>

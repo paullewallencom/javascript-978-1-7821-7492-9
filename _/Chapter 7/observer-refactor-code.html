@@ -1,0 +1,89 @@
+<script type="text/javascript">
+if(!Object.observe){
+ alert('Your browser does not support Object.observe, this demo cannot work !');
+}
+
+// A model can be a simple object
+var empModel = {
+    label: {},// php variable $isActive
+    StatusUpdated: false
+};
+
+// And a separate variable we'll be using for our model's 
+// getter in just a moment
+var _deactivate = "Active";
+
+// Define a new property 'b' under 'a' with a custom
+// getter and setter
+
+Object.defineProperty(empModel.label, 'Active', {
+    get: function () {
+        return _deactivate;
+    },
+    set: function (status) {
+
+        // Whenever 'b' is set on the model
+        // notify the world about a specific type
+        // of change being made. This gives you a huge
+        // amount of control over notifications
+        Object.getNotifier(this).notify({
+            type: 'update',
+            name: 'Deactivate',
+            oldValue: _deactivate
+        });
+
+        // Let's also log out the value anytime it gets
+        // set for kicks
+        console.log('set', status);
+
+        _deactivate = b;
+    }
+});
+
+
+// Which we then observe
+function observer(changes) {
+    changes.forEach(function(change, i) {
+        
+	  console.log('what property changed? ' + change.name);
+      console.log('how did it change? ' + change.type);
+      console.log('whats the current value? ' + change.object[change.name]);
+      console.log(change); // all changes
+        /*
+            What property changed? change.name
+            How did it change? change.type
+            Whats the current value? change.object[change.name]
+        */
+    });
+};
+
+// Examples
+
+empModel.label = 'Employee Status';
+
+/*
+    label changed
+    It was changed by being updated
+    Its current value is 'Buy some more milk'
+*/
+empModel.updatedby = Date.now();
+/*
+    completeBy changed
+    It was changed by being new
+    Its current value is '01/01/2013'
+*/
+delete empModel.StatusUpdated;
+/*
+    completed changed
+    It was changed by being deleted
+    Its current value is undefined
+*/
+console.log(Object.observe(empModel,observer));
+empModel.label.Active = "active";
+console.log(empModel);
+empModel.label = "status";
+console.log(empModel.label);
+Object.unobserve(empModel,observer);
+empModel.label = "statusest";
+console.log(empModel.label);
+</script>

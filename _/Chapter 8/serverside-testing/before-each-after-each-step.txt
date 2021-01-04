@@ -1,0 +1,40 @@
+var assert = require("chai").assert;
+var http   = require("http");
+var userlogin = require('../routes/user');
+var mongoose = require('mongoose');
+var db;
+
+var server = require("../custom_modules/server.js");
+
+describe('Testing Login Module', function() {
+	before(function(done) {
+		db = mongoose.connect('mongodb://localhost:27017/nodedb'); // using the default port.
+		done();
+	});
+	after(function(done) {
+		mongoose.connection.close();
+		done();
+	});
+	beforeEach(function(done) {
+		var user = new userlogin({
+			username: 'test090',
+			password: 'testy'
+		});
+
+		user.save(function(error) {
+			if (error) console.log('error' + error.message);
+			else console.log('no error in saving a new user');
+			done();
+		});
+	});
+	afterEach(function(done) {
+		userlogin.remove({username: 'test090'}, function() {
+			if (error) 
+				console.log('error' + error.message);
+			else 
+				console.log('user remove from the database successfully');			
+			done();
+		});
+	});
+	
+});

@@ -1,0 +1,21 @@
+{
+  "name": "serverside-testing",
+  "version": "1.0.0",
+  "description": "A sample app to test server side JavaScript.",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "keywords": [
+    "server-side",
+    "node.js"
+  ],
+  "author": "Authors",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "chai": "^3.3.0",
+    "express": "^4.13.3",
+    "mocha": "^2.3.3",
+    "request": "^2.64.0"
+  }
+}

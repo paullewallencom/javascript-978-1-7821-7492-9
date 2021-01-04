@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html class='no-js'>
+	<head>
+		<meta charset="utf-8">
+		<title>Feature Detection with Modernizr</title>
+		
+		<!-- include modernizr here... -->
+		<script src="js/modernizr-latest.js" type="text/javascript"></script>
+		
+		<!-- include jQuery and other supporting libraries here... -->
+		<script src="js/jquery.1.11.3.min.js"></script>
+		
+		<!-- include tests here... -->
+		<script>
+		
+		
+		$(document).ready(function(){
+			
+			console.log("Modernizr.inputtypes.color = "+Modernizr.inputtypes.color );
+			console.log("Modernizr.inputtypes.date = "+Modernizr.inputtypes.date);
+			console.log("Modernizr.inputtypes.datetime = "+Modernizr.inputtypes.datetime);
+			console.log("Modernizr.inputtypes.['datetime-local'] = "+Modernizr.inputtypes['datetime-local']);
+			console.log("Modernizr.inputtypes.email = "+Modernizr.inputtypes.email);
+			console.log("Modernizr.inputtypes.month = "+Modernizr.inputtypes.month);
+			console.log("Modernizr.inputtypes.number = "+Modernizr.inputtypes.number);
+			console.log("Modernizr.inputtypes.range = "+Modernizr.inputtypes.range);
+			console.log("Modernizr.inputtypes.search = "+Modernizr.inputtypes.search);
+			console.log("Modernizr.inputtypes.tel = "+Modernizr.inputtypes.tel);
+			console.log("Modernizr.inputtypes.time = "+Modernizr.inputtypes.time);
+			console.log("Modernizr.inputtypes.url = "+Modernizr.inputtypes.url);
+			console.log("Modernizr.inputtypes.week = "+Modernizr.inputtypes.week);
+			
+		});
+		</script>
+		
+	</head>
+
+	<body>
+		<div id="result"></div>
+	</body>
+</html>

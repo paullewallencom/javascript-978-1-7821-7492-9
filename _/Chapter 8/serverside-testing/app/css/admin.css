@@ -1,0 +1,351 @@
+/*!
+ * Start Bootstrap - SB Admin Bootstrap Admin Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Global Styles */
+
+body {
+    margin-top: 100px;
+}
+
+.page-header
+{
+    margin: 10px 0 20px;
+}
+.employee-list .list-group-item .thumbnail {
+  width: 41px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  float: left;
+  margin-right: 10px;
+  border: 1px solid transparent;
+  background: #FFF;
+}
+.employee-profile-pic .thumbnail img {
+  opacity: 0.2;
+}
+.list-group-item
+{
+    border: 0px;
+}
+.user-info .profilename,.user-info .profileemail{color: #fff;}
+.user-info { display: inline-block;
+    vertical-align: baseline;
+    width: 125px;
+    font-size: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 8px;
+	color: #fff;
+}
+.contact-info
+{
+    margin-top: 10px;
+}
+.nav-profile{
+  padding: 10px;
+  background-color: rgb(55, 133, 199);
+  -webkit-box-shadow: inset -20px 0px 55px rgba(0,0,0,0.2);
+}
+.nav-profile .fa-user
+{
+  border-radius: 50%;
+  background-color: #9BC7ED;
+  padding: 10px 18px;
+  color: #FFF;
+      vertical-align: top;
+}
+.thumbnail
+{
+    margin-bottom: 0px;
+}
+
+@media(min-width:768px) {
+    body {
+        margin-top: 50px;
+    }
+}
+
+#wrapper {
+    padding-left: 0;
+}
+
+#page-wrapper {
+    width: 100%;
+    padding: 0;
+    background-color: #fff;
+}
+
+.huge {
+    font-size: 50px;
+    line-height: normal;
+}
+.employee-directory .list-group-item 
+	{
+	  width: 25%;
+	  float: left;
+	}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 225px;
+    }
+
+    #page-wrapper {
+        padding: 10px;
+    }
+}
+
+/* Top Navigation */
+
+.top-nav {
+    padding: 0 15px;
+}
+
+.top-nav>li {
+    display: inline-block;
+    float: left;
+}
+
+.top-nav>li>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 20px;
+    color: #fff;
+}
+
+.top-nav>li>a:hover,
+.top-nav>li>a:focus,
+.top-nav>.open>a,
+.top-nav>.open>a:hover,
+.top-nav>.open>a:focus {
+    color: #fff;
+    background-color: #D83430;
+}
+
+.top-nav>.open>.dropdown-menu {
+    float: left;
+    position: absolute;
+    margin-top: 0;
+    border: 1px solid rgba(0,0,0,.15);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.top-nav>.open>.dropdown-menu>li>a {
+    white-space: normal;
+}
+
+ul.message-dropdown {
+    padding: 0;
+    max-height: 250px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+li.message-preview {
+    width: 275px;
+    border-bottom: 1px solid rgba(0,0,0,.15);
+}
+
+li.message-preview>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+li.message-footer {
+    margin: 5px 0;
+}
+
+ul.alert-dropdown {
+    width: 200px;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+  background-color: #D5D2D2;
+    color: #3d3d3d;
+}
+.navbar-inverse .navbar-nav>li>a {
+  color: #3d3d3d;
+}
+.navbar-inverse {
+  background-color: #F0524E;
+  border: none;
+  box-shadow: 0px 0px 5px #966E6E;
+}
+.navbar-inverse .navbar-brand {
+  color: #FFFFFF;
+}
+
+.main-search-form {
+  padding: 0;
+  position: relative;
+  top: 8px;
+}
+
+.main-search-form .form-control {
+  border-color: transparent;
+  background: rgba(255, 255, 255, 0.85);
+}
+.main-search-form .form-control {
+   width: 215px;
+  float: left;
+  height: 45px;
+  border: 0;
+  height: 30px;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  border-radius: 100px;
+  border: 1px solid transparent;
+}
+
+.main-search-form .nav-search-btn {
+  position: absolute;
+  right: 0px;
+  left: auto;
+}
+.nav-action-btn {
+  border-radius: 100px;
+  padding: 0;
+  font-size: 16px;
+  line-height: 100%;
+  width: 45px;
+  height: 45px;
+  border: 0;
+  height: 30px;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  background: transparent !important;
+  color: #888;
+}
+
+/* Side Navigation */
+
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 0px;
+        left: 225px;
+        width: 225px;
+        margin-left: -225px;
+        border: none;
+        border-radius: 0;
+        overflow-y: auto;
+        background-color: #F5F5F5;
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+          -webkit-box-shadow: inset -20px 0px 55px rgba(0,0,0,0.2);
+    }
+.navbar-fixed-top {
+ width: 83.5%;
+  right: 0px;
+    left: auto;
+    
+}
+    .side-nav>li>a {
+        width: 225px;
+    }
+
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        outline: none;
+        background-color: #D5D2D2 !important;
+        color: #3d3d3d !important;
+    }
+}
+
+.side-nav>li>ul {
+    padding: 0;
+}
+
+.side-nav>li>ul>li>a {
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: none;
+    color: #999;
+}
+
+.side-nav>li>ul>li>a:hover {
+    color: #fff;
+}
+
+/* Flot Chart Containers */
+
+.flot-chart {
+    display: block;
+    height: 400px;
+}
+
+.flot-chart-content {
+    width: 100%;
+    height: 100%;
+}
+
+/* Custom Colored Panels */
+
+.huge {
+    font-size: 40px;
+}
+
+.panel-green {
+    border-color: #5cb85c;
+}
+
+.panel-green > .panel-heading {
+    border-color: #5cb85c;
+    color: #fff;
+    background-color: #5cb85c;
+}
+
+.panel-green > a {
+    color: #5cb85c;
+}
+
+.panel-green > a:hover {
+    color: #3d8b3d;
+}
+
+.panel-red {
+    border-color: #d9534f;
+}
+
+.panel-red > .panel-heading {
+    border-color: #d9534f;
+    color: #fff;
+    background-color: #d9534f;
+}
+
+.panel-red > a {
+    color: #d9534f;
+}
+
+.panel-red > a:hover {
+    color: #b52b27;
+}
+
+.panel-yellow {
+    border-color: #f0ad4e;
+}
+
+.panel-yellow > .panel-heading {
+    border-color: #f0ad4e;
+    color: #fff;
+    background-color: #f0ad4e;
+}
+
+.panel-yellow > a {
+    color: #f0ad4e;
+}
+
+.panel-yellow > a:hover {
+    color: #df8a13;
+}

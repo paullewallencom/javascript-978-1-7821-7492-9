@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html class='no-js'>
+	<head>
+		<meta charset="utf-8">
+		<title>Feature Detection with Modernizr</title>
+
+		<!-- include modernizr here... -->
+		<script src="js/modernizr-latest.js" type="text/javascript"></script>
+		
+		<!-- include jQuery and other supporting libraries here... -->
+		<script src="js/jquery.1.11.3.min.js"></script>
+		
+		<!-- include tests here... -->
+		
+		<style>
+			.margin-top-15{
+				margin-top: 15px;
+			}
+			.box-bg{
+				width: 400px;
+				height: 100px;
+				padding: 10px;
+				border: 1px solid #cecece;
+				background: url(images/background-image-tree.jpg);
+				background-size: 50%;
+				background-repeat:  no-repeat;
+			}
+			/*.no-backgroundsize .box-bg{
+				background: url(images/background-image-cloud.jpg);
+			}*/
+			
+			.float-left{
+				float:left;
+			}
+			.hide{
+				display:none;
+			}
+			
+		</style>
+		
+		<script>	
+			$(document).ready(function(){
+				if( ! Modernizr.backgroundsize){
+					$(".box-bg").css("background-image", "url(images/background-image-cloud.jpg)");
+				}
+			});
+		</script>
+		
+	</head>
+
+	<body>
+		<div class='box-bg float-left'> This is a box with background size 50% </div>
+		<div class='margin-top-15'></div>
+	</body>
+</html>

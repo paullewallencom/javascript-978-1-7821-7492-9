@@ -1,0 +1,33 @@
+{
+  "name": "serverside-testing",
+  "version": "1.0.0",
+  "description": "A sample app to test server side JavaScript.",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "keywords": [
+    "server-side",
+    "node.js"
+  ],
+  "author": "Authors",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "body-parser": "^1.14.0",
+    "chai": "^3.2.0",
+    "consolidate": "^0.13.1",
+    "cookie-parser": "^1.4.0",
+    "express": "^3.21.2",
+    "method-override": "^2.3.5",
+    "mocha": "^2.2.5",
+    "mongodb": "^2.0.42",
+    "mongoose": "^4.1.4",
+    "nodemon": "^1.7.1",
+    "passport": "^0.3.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.11.14",
+    "request": "^2.60.0",
+    "should": "^7.1.0",
+    "swig": "^1.4.2"
+  }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html class='no-js'>
+	<head>
+		<meta charset="utf-8">
+		<title>Feature Detection with Modernizr</title>
+
+		<style>
+			table{
+				border: #cecece 1px solid;
+				border-collapse: collapse;
+			}
+			table td, table td{
+				padding: 2px;
+				vertical-align: top;
+				text-align:left;
+				border: #cecece 1px solid;
+				
+			}
+		</style>
+		
+		<!-- include modernizr here... -->
+		<script src="js/modernizr-latest.js" type="text/javascript"></script>
+		
+		<!-- include jQuery and other supporting libraries here... -->
+		<script src="js/jquery.1.11.3.min.js"></script>
+		
+		<!-- include tests here... -->
+		<script>
+		
+		
+		$(document).ready(function(){
+		
+			Modernizr.addTest('newFeature', function(){
+			  var isNewFeaturePresent = false;
+			  // code to test if new feature is present
+			  return isNewFeaturePresent;
+			});
+		
+			for(var key in Modernizr) {
+				if(typeof Modernizr[key] == 'boolean'){
+					//console.log(key + "::" + Modernizr[key] );
+					if(Modernizr[key]){
+						$("#supported-features").append("<i>"+key+"</i><br/>");
+					}else{
+						$("#unsupported-features").append("<i>"+key+"</i><br/>");
+					}
+				}
+			}
+		});
+		</script>
+		
+	</head>
+
+	<body>
+	<table>
+		<tr><th>Supported</th><th>Not Supported</th></tr>
+		<tr><td id='supported-features'></td><td id='unsupported-features'></td></tr>
+	</table>
+	</body>
+</html>

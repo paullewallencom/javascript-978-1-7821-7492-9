@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html class='no-js'>
+	<head>
+		<meta charset="utf-8">
+		<title>Feature Detection with Modernizr</title>
+
+		<!-- include modernizr here... -->
+		<script src="js/modernizr-latest.js" type="text/javascript"></script>
+		
+		<!-- include jQuery and other supporting libraries here... -->
+		<script src="js/jquery.1.11.3.min.js"></script>
+		
+		<!-- include tests here... -->
+		
+		
+		<script>
+			$(document).ready(function(){
+				Modernizr.addTest('testcsscalc', function() {
+					var prop = 'width:';
+					var value = 'calc(5px);';
+					var elementDiv = document.createElement('div');
+
+					elementDiv.style.cssText = prop + Modernizr._prefixes.join(value + prop);
+
+					return !!elementDiv.style.length;
+				});
+				
+				$("#checkTest").click(function(){
+					if(Modernizr.testcsscalc){
+						$("#result").html("Users can use calc() in CSS");
+					}else{
+						$("#result").html("Use of calc() in CSS is not supported");
+					}
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<input type="button" id="checkTest" value="Check Test" />
+		<div id="result"></div>
+	</body>
+</html>

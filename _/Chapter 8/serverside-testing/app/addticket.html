@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{title}} - Add Ticket</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/admin.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper"> 
+	
+		{% include "navigation.html" %}
+
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">
+                            Add Tickets
+                        </h1>
+
+                    </div>
+                </div>
+                <!-- /.row -->
+
+                <div class="content">
+                    <div class="row">
+					<div class="{{show}}">
+						{{msg}}
+					</div>
+						<form action="/addticket"  method="post" class="{{visibility}}" id="add_ticket">
+                            <div class="form-group">
+                                <label>Issue Type</label>
+                                <select class="form-control" name="type" data-validation="required" data-validation-error-msg="Please select the type of issue">
+                                    <option value="">-----Select----</option>
+									<option value="Access Related Issue">Access Related Issue</option>
+                                    <option value="Email Related Issues">Email Related Issues</option>
+                                    <option value="Hardware Request">Hardware Request</option>
+                                    <option value="Health & Safety">Health & Safety</option>
+                                    <option value="Network">Network</option>
+                                    <option value="Intranet">Intranet</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Assign Department</label>
+                                <select class="form-control" name="department" data-validation="required" data-validation-error-msg="Please select the Department">
+									<option value="">-----Select----</option>
+                                    <option value="Admin">Admin</option>
+                                    <option value="HR">HR</option>
+                                    <option value="IT">IT</option>
+                                    <option value="Development">Development</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Comments</label>(<span id="maxlength">200</span> characters left)
+                                <textarea class="form-control" rows="3" name="comments" id="comments" data-validation="required" data-validation-error-msg="Please enter some comment."></textarea>
+                            </div>
+
+                            <input type="submit" class="btn btn-default" name="Submit" value="Add Ticket">
+                            <input type="reset" class="btn btn-default" name="Reset" value="Reset">
+							<input type="hidden" class="btn btn-default" name="{{username}}" value="{{username}}">
+							<input type="hidden" class="btn btn-default" name="{{email}}" value="{{email}}">
+
+                        </form>
+						
+						
+                    </div>
+                </div>
+
+
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+        <script src="js/jquery.1.11.3.min.js"></script>
+		
+        <script src="js/bootstrap.min.js"></script>
+		
+		<script src="js/plugins/jquery.form-validator.min.js"></script>
+		
+		<script src="js/custom.js"></script>
+		
+		<script>
+		
+			$('#comments').restrictLength($('#maxlength'));
+			
+            $('.new').addClass("active");
+        
+		
+		</script>
+
+</body>
+
+</html>

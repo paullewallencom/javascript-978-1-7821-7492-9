@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html class='no-js'>
+	<head>
+		<meta charset="utf-8">
+		<title>Feature Detection with Has.js</title>
+
+		<!-- include jQuery and other supporting libraries here... -->
+		<script src="js/jquery.1.11.3.min.js"></script>
+		
+		<!-- include tests here... -->
+		
+		<script>
+		
+		$(document).ready(function(){
+			has.add("drag-and-drop-test", function(){
+				var dnd = false;
+				// check if drag and drop exists
+				
+				return dnd;
+			})
+		});
+		</script>
+		
+	</head>
+
+	<body>
+		<div id='result'></div>
+	</body>
+</html>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite name="Firefox_390_Windows.Jasmine Spy" errors="0" failures="0" tests="2" time="0.027">
+<testcase classname="Firefox_390_Windows.Jasmine Spy" name="Spying employee" time="0.023"/>
+<testcase classname="Firefox_390_Windows.Jasmine Spy" name="Spying employee with arguments" time="0.004"/>
+</testsuite>

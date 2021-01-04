@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html class='no-js'>
+<head>
+	<meta charset="utf-8">
+	<title>Testing Modernizr</title>
+	
+</head>
+
+<body>
+	<div id='ajax-div'>	
+	</div>
+
+</body>
+</html>
+<script>
+	
+	var xmlhttp;
+	if (window.XMLHttpRequest){
+	　　	// code for IE7+, Firefox, Chrome, Opera, Safari
+		document.getElementById('ajax-div').innerHTML = "from xmlhttprequest";
+		xmlhttp=new XMLHttpRequest();
+	}else{
+		// code for IE6, IE5
+		document.getElementById('ajax-div').innerHTML = "from activexobject";
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	
+</script>

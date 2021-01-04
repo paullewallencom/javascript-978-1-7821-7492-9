@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Chapter - 1</title>
+	<!-- Basic Style -->
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/logger/assets/skins/sam/logger.css">
+	<!-- Source file -->
+	<script src="http://yui.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
+
+	<script>
+		// All our functions and tests go here.	
+		function convertCurrency(amount, rateOfConversion){
+			var toCurrencyAmount = 0;
+			// conversion		
+			toCurrencyAmount = rateOfConversion * amount;
+			// rounding off
+			//toCurrencyAmount = Math.round(toCurrencyAmount * 100) / 100;
+			console.log(toCurrencyAmount);
+			// toCurrencyAmount = Number.parseFloat(toCurrencyAmount).toFixed(2); // fails on IE
+			toCurrencyAmount = parseFloat(toCurrencyAmount).toFixed(2);
+			return toCurrencyAmount;
+		}
+		
+		YUI().use('test-console', function (Y) {
+			var testCase = new Y.Test.Case({
+			testCurrencyConversion: function () {
+				var expectedResult = 1.59;
+				var actualResult = convertCurrency(100, 1/63);
+				Y.Assert.areEqual(expectedResult, actualResult,
+				"100 INR should be equal to $ 1.59");
+				}
+			});
+			
+			// 	Using YUI test console.
+			new Y.Test.Console({
+				filters: {
+					fail : true,
+					pass : true
+				},
+				newestOnTop: false,
+				width:"400px",
+				height:"300px"
+			}).render('#testLogs');
+			
+			Y.Test.Runner.add(testCase);
+			//run all tests
+			Y.Test.Runner.run();
+		});
+	</script>
+
+</head>
+
+<body class="yui3-skin-sam">
+	<div id="testLogs">
+	
+	</div>
+</body>
+
+</html>
